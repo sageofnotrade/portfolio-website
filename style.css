@@ -1,0 +1,184 @@
+/* === GLOBAL COLORS === */
+:root {
+    --bg-color: #f1f3f5;         /* cool gray */
+    --text-color: #111111;       /* soft black */
+    --section-bg: #ffffff;       /* soft white */
+    --accent: #5c5f61;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg-color: #111111;       /* soft black */
+      --text-color: #eaeaea;     /* soft white */
+      --section-bg: #1a1a1a;     /* darker gray */
+    }
+  }
+  
+  /* === RESET & BASE === */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'General Sans', 'Montserrat', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+  
+  /* === HERO SECTION === */
+  .hero {
+    background: url('img/hero-bg.png') center/cover no-repeat fixed;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--text-color);
+    animation: fadeIn 2.5s;
+  }
+  
+  .hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: white;
+  }
+  
+  .hero-content p {
+    font-size: 1.5rem;
+    color: white;
+  }
+  
+  /* === SKILLS SECTION WITH CLIP-PATH === */
+  .skills {
+    background-color: var(--section-bg);
+    padding: 5rem 2rem;
+    clip-path: polygon(0 5%, 100% 0%, 100% 100%, 0% 100%);
+    text-align: center;
+  }
+  
+  .skills h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  
+  .skill {
+    padding: 1rem 2rem;
+    background: var(--accent);
+    color: white;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    cursor: default;
+  }
+  
+  .skill:hover {
+    transform: scale(1.05);
+  }
+  
+  /* === PROJECTS SECTION === */
+  .projects {
+    background-color: var(--bg-color);
+    padding: 5rem 2rem;
+    text-align: center;
+    cursor: default;
+  }
+  
+  .projects h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .project-container {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    padding: 0 1rem;
+  }
+  
+  .project {
+    background-color: var(--section-bg);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+  }
+  
+  .project:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* === CONTACT SECTION === */
+  .contact {
+    background-color: var(--section-bg);
+    padding: 5rem 2rem;
+    text-align: center;
+  }
+  
+  .contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 500px;
+    margin: auto;
+  }
+  
+  input, textarea {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+  }
+  
+  button {
+    padding: 0.75rem;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  button:hover {
+    background: #606366;
+  }
+  
+  /* === ANIMATIONS === */
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(10px); }
+    50% { opacity: .5; transform: translateY(5px); }
+    100% { opacity: 1;transform: translateY(0px);}
+  }
+  
+  /* === RESPONSIVE MEDIA === */
+  @media (max-width: 768px) {
+    .hero-content h1 {
+      font-size: 2.25rem;
+    }
+  
+    .hero-content p {
+      font-size: 1.125rem;
+    }
+  
+    .skills-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
